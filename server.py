@@ -6,7 +6,7 @@ from aiohttp import web
 
 
 async def handle(request):
-    text = "Hello, IS helped me get here! version: {}".format(
+    text = "Hello, Openshift Container Platform helped me get here! version: {}".format(
         os.environ["TESTAPP_VERSION"])
     print('received request, replying with "{}".'.format(text))
     return web.Response(text=text)
