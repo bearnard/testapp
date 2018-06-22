@@ -4,6 +4,7 @@ node {
 
 
     currentBuild.result = "SUCCESS"
+    env.IMAGE = "bearn/testapp"
 
     try {
 
@@ -22,7 +23,7 @@ node {
 
        stage('Build Docker'){
 
-            sh 'docker build --pull --cache-from "$IMAGE" -t "$IMAGE" .'
+           sh 'docker build --pull --cache-from "${env.IMAGE}" -t "${env.IMAGE}" .'
        }
 
        stage('Deploy'){
