@@ -1,13 +1,12 @@
 #!groovy
 
+environment { 
+    IMAGE = "bearn/testapp
+}
+
 node {
 
-
     currentBuild.result = "SUCCESS"
-    
-    environment { 
-      IMAGE = "bearn/testapp"
-    }
 
     try {
 
