@@ -23,12 +23,13 @@ node {
 
        stage('Build Docker'){
 
-           sh 'docker build --pull --cache-from ${env.IMAGE} -t ${env.IMAGE} .'
+           sh 'docker build -t bearn/testapp .'
        }
 
        stage('Deploy'){
 
-         echo 'Push to Repo'
+           echo 'Push to Repo'
+           sh 'docker push bearn/testapp'
 
        }
 
