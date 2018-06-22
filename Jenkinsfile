@@ -18,15 +18,13 @@ node {
 
        stage('Test'){
 
-         env.NODE_ENV = "test"
-
-         print "Environment will be : ${env.NODE_ENV}"
+           sh 'printenv'
 
        }
 
        stage('Build Docker'){
 
-           sh 'docker build --pull --cache-from "${env.IMAGE}" -t "${env.IMAGE}" .'
+           sh 'docker build --pull --cache-from ${env.IMAGE} -t ${env.IMAGE} .'
        }
 
        stage('Deploy'){
