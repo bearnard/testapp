@@ -1,7 +1,7 @@
 #!groovy
 
 environment { 
-    IMAGE = "bearn/testapp
+    IMAGE = "bearn/testapp"
 }
 
 node {
