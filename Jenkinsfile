@@ -4,7 +4,10 @@ node {
 
 
     currentBuild.result = "SUCCESS"
-    env.IMAGE = "bearn/testapp"
+    
+    environment { 
+      IMAGE = "bearn/testapp"
+    }
 
     try {
 
