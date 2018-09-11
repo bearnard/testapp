@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.6-slim-stretch
 LABEL maintainer "Bearnard Hibbins <bearnard@gmail.com>"
 
 ENV TESTAPP_VERSION 0.2.0
