@@ -1,6 +1,6 @@
 apiVersion: 0.1.0
 environments:
-  minikube:
+  qa:
     destination:
       namespace: default
       server: https://kubernetes.default.svc
