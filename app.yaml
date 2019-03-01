@@ -1,0 +1,18 @@
+apiVersion: 0.1.0
+environments:
+  minikube:
+    destination:
+      namespace: default
+      server: https://kubernetes.default.svc
+    k8sVersion: v1.13.3
+    path: minikube
+kind: ksonnet.io/app
+name: testapp
+registries:
+  incubator:
+    gitVersion:
+      commitSha: 422d521c05aa905df949868143b26445f5e4eda5
+      refSpec: master
+    protocol: github
+    uri: github.com/ksonnet/parts/tree/master/incubator
+version: 0.0.9
