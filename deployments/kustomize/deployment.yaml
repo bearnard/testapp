@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: testapp
+  labels:
+    app: testapp
+spec:
+  selector:
+    matchLabels:
+      app: testapp
+  template:
+    metadata:
+      labels:
+        app: testapp
+    spec:
+      containers:
+      - name: testapp
+        image: bearn/testapp
+        ports:
+        - name: http
+          containerPort: 5858
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5858

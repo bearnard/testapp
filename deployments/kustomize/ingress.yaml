@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: testapp
+  annotations:
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  tls:
+  - hosts: [testapp.k8s.qa-p6t.org]
+    secretName: testapp-k8s-qa-p6t-org
+  rules:
+  - host: testapp.k8s.qa-p6t.org
+    http:
+      paths:
+      - backend:
+          serviceName: testapp
+          servicePort: 80

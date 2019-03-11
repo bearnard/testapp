@@ -1,0 +1,14 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: testapp
+spec:
+  secretName: testapp-k8s-qa-p6t-org
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt
+  commonName: testapp.k8s.qa-p6t.org
+  acme:
+    config:
+    - http01: {}
+      domains: [testapp.k8s.qa-p6t.org]
