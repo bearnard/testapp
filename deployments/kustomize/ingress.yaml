@@ -7,7 +7,7 @@ metadata:
 spec:
   tls:
   - hosts: [testapp.k8s.qa-p6t.org]
-    secretName: testapp-k8s-qa-p6t-org
+    secretName: cert-manager/cert-wildcard-k8s-qa-p6t-org
   rules:
   - host: testapp.k8s.qa-p6t.org
     http:
