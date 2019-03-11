@@ -12,7 +12,8 @@ counter = Counter('testapp_requests', 'Number of requests to /')
 
 async def handle(request):
     counter.inc()
-    text = "Hello, Openshift Container Platform helped me get here! version: {}".format(
+    text = "Hello, {} helped me get here! version: {}".format(
+        os.environ.get('PLATFORM', 'Unknown'),
         os.environ["TESTAPP_VERSION"])
     print('received request, replying with "{}".'.format(text))
     return web.Response(text=text)
