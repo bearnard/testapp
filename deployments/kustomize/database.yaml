@@ -1,0 +1,24 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: praekelt-testapp-db
+  namespace: testapp
+spec:
+  teamId: praekelt
+  volume:
+    storageClass: rook-ceph-slow-block
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    # database owner
+    sre:
+    - superuser
+    - createdb
+    # role for application testapp
+    # {username}.{team}-{clustername}.credentials.postgresql.acid.zalan.do
+    testapp: []
+  # databases: name->owner
+  databases:
+    testapp: testapp
+  postgresql:
+    version: "10"
