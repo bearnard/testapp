@@ -23,3 +23,16 @@ spec:
           httpGet:
             path: /
             port: 5858
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: testapp.praekelt-testapp-db.credentials
+              key: password
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: testapp.praekelt-testapp-db.credentials
+              key: password
+        - name: DATABASE_URI
+          value: postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@praekelt-testapp-db/testapp
